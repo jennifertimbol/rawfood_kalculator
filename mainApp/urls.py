@@ -8,6 +8,6 @@ urlpatterns = [
     path('createaccount', views.createaccount),
     path('signin', views.signin),
     path('profile', views.userprofile),
-    path('kalculator', views.kalculator),
+    path('rawfoodkalculator/kalculator', views.kalculator),
     path('logout', views.logout),
 ]

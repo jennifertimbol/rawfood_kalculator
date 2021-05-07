@@ -4,12 +4,7 @@ from django.contrib import messages
 import bcrypt
 
 def index(request):
-    if "logged_user" not in request.session:
-        return redirect('/')
-    context = {
-        'user' : User.objects.get(id=request.session['logged_user'])
-    }
-    return render(request, "home.html", context)
+    return render(request, "home.html")
 
 def register(request):
     return render(request, "register.html")
@@ -59,13 +54,9 @@ def userprofile(request):
     return render(request, "userprofile.html", context)
 
 def kalculator(request):
-    if "logged user" not in request.session:
-        return redirect('/')
-
     context = {
         'user' : User.objects.get(id=request.session['logged_user'])
     }
-
     return render(request, 'kalculator.html', context)
 
 def logout(request):
