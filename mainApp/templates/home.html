@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rawfood Kalculator</title>
+</head>
+<body>
+    <h1>Your Rawfood Kalculator</h1>
+    {% if user in request.session %}
+    <nav>
+        <a href="/">Home</a>
+        <a href="/profile">Profile</a>
+        <a href="">Helpful Links</a>
+        <a href="">Forum</a>
+        <a href="/logout">Logout</a>
+    </nav>
+    {% else %}
+    <a href="/register">Register</a>
+    <a href="login">Login</a>
+    {% endif %}
+    <h4>What is "raw food"?</h4>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos minima, nihil facilis possimus at laborum quasi assumenda, doloribus nemo, ipsum repudiandae tempora. Aperiam illo sunt dolorem blanditiis quas rerum facere? Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius neque illo odio eum architecto consequatur doloribus vero, accusamus eaque reiciendis necessitatibus itaque tenetur voluptas qui provident a! Placeat, blanditiis maiores.Eum magnam provident possimus. Voluptatem itaque est dolor quos reprehenderit voluptatum quas veniam, amet, mollitia facere ratione repellat nam velit, architecto necessitatibus omnis officia obcaecati facilis quam temporibus? Tenetur, facere.</p>
+    <h4>Why you should raw feed</h4>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque temporibus voluptates quia dolorem mollitia autem natus rem vitae cum, nisi consequatur ipsam dicta minima in molestiae. Recusandae magnam saepe laborum. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam tempore, possimus quo mollitia quasi iure eligendi dolor necessitatibus tenetur esse, cumque qui totam labore ut suscipit optio dignissimos, architecto error.
+    In vitae, blanditiis sunt repudiandae quisquam possimus commodi magni! Voluptatum quidem optio neque id dolorem nobis, quaerat iste adipisci sint modi obcaecati consequuntur quo quae eius! Ipsam, veritatis ratione? Maxime?
+    Aliquam, autem aliquid quam molestias pariatur obcaecati modi deserunt incidunt officiis mollitia, distinctio voluptate recusandae sit delectus et cumque architecto ullam itaque commodi? Id doloribus, atque quibusdam ut tenetur illum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium eius suscipit, ratione magnam recusandae hic, amet reiciendis aliquid eaque impedit natus reprehenderit optio ipsa tempore voluptatem, officiis quis facere asperiores.
+    Possimus non odio labore tempora ab eius dignissimos corrupti harum similique, rerum impedit accusamus quia vel quas quam voluptatibus, odit nihil quidem. Consequatur dolorem distinctio dicta molestiae accusamus nisi facilis!
+    Vel sunt, voluptates hic commodi ipsum debitis dolores error atque unde expedita quibusdam iure neque impedit cum inventore ex cumque odio corrupti sapiente porro doloremque iusto illum alias? Soluta, tempora?</p>
+    <h4>Benefits of raw feeding</h4>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos vitae eveniet eum? Sit laboriosam qui aut nesciunt vero sequi quod labore molestias? Qui repellendus voluptas similique exercitationem praesentium dolorem consectetur?
+    Repellat, numquam ratione nostrum tempore soluta atque voluptatem eos debitis excepturi sed omnis laborum deleniti recusandae blanditiis architecto nisi, perspiciatis ab nemo quo. Placeat distinctio excepturi quis exercitationem, maxime nostrum!
+    Debitis repudiandae voluptatum aliquid hic dolorum quas explicabo fugit. Aut neque exercitationem voluptas eos recusandae expedita rem, non provident nesciunt mollitia eius velit placeat debitis quia iste perferendis labore vel.</p>
+</body>
+</html>

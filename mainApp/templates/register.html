@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+
+<body>
+    <a href="/">Home</a>
+    <div class="register">
+        <h3>Create an Account</h3>
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <form action="/createaccount" method="POST">
+            {% csrf_token %}
+            <label for="username">Username:</label>
+            <input type="text" name="username">
+            <br>
+            <label for="email">Email</label>
+            <input type="text" name="email">
+            <br>
+            <label for="password">Password</label>
+            <input type="password" name="password">
+            <br>
+            <label for="confirm">Confirm PW</label>
+            <input type="password" name="confirm_password">
+            <br>
+            <input type="submit" value="Register">
+        </form>
+        <p>Already have an account?</p>
+        <a href="/login">Sign in</a>
+    </div>
+
+</body>
+
+</html>
