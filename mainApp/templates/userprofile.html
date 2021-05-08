@@ -4,22 +4,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
     <title>Profile</title>
 </head>
 
 <body>
-    <h1>Hello, {{user.username}}!</h1>
-    <nav>
-        <a href="/">Home</a>
-        <a href="">Helpful Links</a>
-        <a href="">Forum</a>
-        <a href="/logout">Logout</a>
+    <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #e3f2fd;">
+        <a class="navbar-brand" href="#">NavBar</a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="#navbar">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="/">Home</a>
+                <a class="nav-item nav-link" href="/profile">Profile</a>
+                <a class="nav-item nav-link" href="">Helpful Links</a>
+                <a class="nav-item nav-link" href="">Forum</a>
+                <a class="nav-item nav-link" href="/logout">Logout</a>
+            </div>
+        </div>
     </nav>
     <main>
-        <h3>Your pet(s):</h3>
+        <h1>Hello, {{user.username}}!</h1>
+        <h2>Your pet(s):</h2>
+        <div>
+            <h6>{{petForm.name}}</h6>
+            <h6>{{petForm.age}}</h6>
+            <h6>{{petForm.birthdate}}</h6>
+        </div>
 
     </main>
-    <button><a href="/rawfoodkalculator/kalculator">Add a pet</a></button>
+    <button><a href="/rawfoodkalculator/petinfo">Add a pet</a></button>
+
+    <div>
+        <h2>Feeding suggestion</h2>
+        <h3>80% meat - 10% bones - 5% liver - 5% other secreting organs</h3>
+        <p>The 80-10-5-5 is simply a general guideline for owners who are beginners at raw feeding.</p>
+        <p>Overtime, you will learn how to modify this based on your own pet. Every animal is different-- some (most big dogs) will require more bones.</p>
+    </div>
+    <div>
+        <h2>Conversion Chart</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>lbs</th>
+                    <th>oz</th>
+                    <th>cups</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    </div>
 </body>
 
 </html>

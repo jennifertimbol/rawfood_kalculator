@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import User, Pet
+from .forms import petForm, kalculatorForm
 from django.contrib import messages
 import bcrypt
 
@@ -48,16 +49,54 @@ def userprofile(request):
         return redirect('/')
 
     context = {
-        'user' : User.objects.get(id=request.session['logged_user'])
+        'user' : User.objects.get(id=request.session['logged_user']),
+        'petForm':petForm,
+        
     }
 
     return render(request, "userprofile.html", context)
 
-def kalculator(request):
+def petinfo(request):
     context = {
-        'user' : User.objects.get(id=request.session['logged_user'])
+        'user' : User.objects.get(id=request.session['logged_user']),
+        'petForm':petForm,
     }
-    return render(request, 'kalculator.html', context)
+    return render(request, 'petinfo.html', context)
+
+def addpetinfo(request):
+    if request.method == "POST":
+        postedPetForm = petForm(request.POST, request.FILES)
+        if postedPetForm.is_valid():
+            postedPetForm.save()
+            return redirect('/addpet')
+        else:
+            context = {
+                'user' : User.objects.get(id=request.session['logged_user']),
+                'petForm':postedPetForm,
+            }
+            return render(request, "petinfo.html", context)
+    return redirect('/profile')
+
+def addpet(request):
+    if request.method== "POST":
+        postedKalculatorForm = kalculatorForm(request.POST)
+        if postedKalculatorForm.is_valid():
+            goal_weight = request.GET['goal_weight']
+            percentage = request.GET['percentage']
+            results = goal_weight*percentage
+            return redirect('/results')
+
+    context = {
+        'user' : User.objects.get(id=request.session['logged_user']),
+        'kalculatorForm' : kalculatorForm,
+    }
+    return render(request, "calculate.html", context)
+
+def results(request):
+    context = {
+        'user' : User.objects.get(id=request.session['logged_user']),
+    }
+    return render(request, "results.html", context)
 
 def logout(request):
     request.session.flush()

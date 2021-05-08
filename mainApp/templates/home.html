@@ -4,58 +4,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <title>Rawfood Kalculator</title>
 </head>
 
 <body>
-    <h1>Your Rawfood Kalculator</h1>
-    {% if request.session.logged_user %}
-    <nav>
-        <a href="/">Home</a>
-        <a href="/profile">Profile</a>
-        <a href="">Helpful Links</a>
-        <a href="">Forum</a>
-        <a href="/logout">Logout</a>
-    </nav>
-    {% else %}
-    <a href="/register">Register</a>
-    <a href="login">Login</a>
-    {% endif %}
-    <h4>What is "raw food"?</h4>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos minima, nihil facilis possimus at laborum
-        quasi assumenda, doloribus nemo, ipsum repudiandae tempora. Aperiam illo sunt dolorem blanditiis quas rerum
-        facere? Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius neque illo odio eum architecto consequatur
-        doloribus vero, accusamus eaque reiciendis necessitatibus itaque tenetur voluptas qui provident a! Placeat,
-        blanditiis maiores.Eum magnam provident possimus. Voluptatem itaque est dolor quos reprehenderit voluptatum quas
-        veniam, amet, mollitia facere ratione repellat nam velit, architecto necessitatibus omnis officia obcaecati
-        facilis quam temporibus? Tenetur, facere.</p>
-    <h4>Why you should raw feed</h4>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque temporibus voluptates quia dolorem mollitia autem
-        natus rem vitae cum, nisi consequatur ipsam dicta minima in molestiae. Recusandae magnam saepe laborum. Lorem,
-        ipsum dolor sit amet consectetur adipisicing elit. Quibusdam tempore, possimus quo mollitia quasi iure eligendi
-        dolor necessitatibus tenetur esse, cumque qui totam labore ut suscipit optio dignissimos, architecto error.
-        In vitae, blanditiis sunt repudiandae quisquam possimus commodi magni! Voluptatum quidem optio neque id dolorem
-        nobis, quaerat iste adipisci sint modi obcaecati consequuntur quo quae eius! Ipsam, veritatis ratione? Maxime?
-        Aliquam, autem aliquid quam molestias pariatur obcaecati modi deserunt incidunt officiis mollitia, distinctio
-        voluptate recusandae sit delectus et cumque architecto ullam itaque commodi? Id doloribus, atque quibusdam ut
-        tenetur illum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium eius suscipit, ratione
-        magnam recusandae hic, amet reiciendis aliquid eaque impedit natus reprehenderit optio ipsa tempore voluptatem,
-        officiis quis facere asperiores.
-        Possimus non odio labore tempora ab eius dignissimos corrupti harum similique, rerum impedit accusamus quia vel
-        quas quam voluptatibus, odit nihil quidem. Consequatur dolorem distinctio dicta molestiae accusamus nisi
-        facilis!
-        Vel sunt, voluptates hic commodi ipsum debitis dolores error atque unde expedita quibusdam iure neque impedit
-        cum inventore ex cumque odio corrupti sapiente porro doloremque iusto illum alias? Soluta, tempora?</p>
-    <h4>Benefits of raw feeding</h4>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos vitae eveniet eum? Sit laboriosam qui aut nesciunt
-        vero sequi quod labore molestias? Qui repellendus voluptas similique exercitationem praesentium dolorem
-        consectetur?
-        Repellat, numquam ratione nostrum tempore soluta atque voluptatem eos debitis excepturi sed omnis laborum
-        deleniti recusandae blanditiis architecto nisi, perspiciatis ab nemo quo. Placeat distinctio excepturi quis
-        exercitationem, maxime nostrum!
-        Debitis repudiandae voluptatum aliquid hic dolorum quas explicabo fugit. Aut neque exercitationem voluptas eos
-        recusandae expedita rem, non provident nesciunt mollitia eius velit placeat debitis quia iste perferendis labore
-        vel.</p>
+    <div class="container-fluid">
+        {% if request.session.logged_user %}
+        <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #e3f2fd;">
+            <a class="navbar-brand" href="#">NavBar</a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="#navbar">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" href="/profile">Profile</a>
+                    <a class="nav-item nav-link" href="">Helpful Links</a>
+                    <a class="nav-item nav-link" href="">Forum</a>
+                    <a class="nav-item nav-link" href="/logout">Logout</a>
+                </div>
+            </div>
+        </nav>
+        {% else %}
+        <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #e3f2fd;">
+            <a class="navbar-brand" href="#">NavBar</a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="#navbar">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" href="/register">Register</a>
+                    <a class="nav-item nav-link" href="login">Login</a>
+                </div>
+            </div>
+        </nav>
+        {% endif %}
+        <main>
+        <h2>Your Rawfood Kalculator</h2>
+        <h4>What is "raw food"?</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos minima, nihil facilis possimus at
+            laborum
+            quasi assumenda, doloribus nemo, ipsum repudiandae tempora. Aperiam illo sunt dolorem blanditiis quas rerum
+            facere? Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius neque illo odio eum architecto
+            consequatur
+            doloribus vero, accusamus eaque reiciendis necessitatibus itaque tenetur voluptas qui provident a! Placeat,
+            blanditiis maiores.Eum magnam provident possimus. Voluptatem itaque est dolor quos reprehenderit voluptatum
+            quas
+            veniam, amet, mollitia facere ratione repellat nam velit, architecto necessitatibus omnis officia obcaecati
+            facilis quam temporibus? Tenetur, facere.</p>
+        <h4>Why you should raw feed</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque temporibus voluptates quia dolorem mollitia
+            autem
+            natus rem vitae cum, nisi consequatur ipsam dicta minima in molestiae. Recusandae magnam saepe laborum.
+            Lorem,
+            ipsum dolor sit amet consectetur adipisicing elit. Quibusdam tempore, possimus quo mollitia quasi iure
+            eligendi
+            dolor necessitatibus tenetur esse, cumque qui totam labore ut suscipit optio dignissimos, architecto error.
+            In vitae, blanditiis sunt repudiandae quisquam possimus commodi magni! Voluptatum quidem optio neque id
+            dolorem
+            nobis, quaerat iste adipisci sint modi obcaecati consequuntur quo quae eius! Ipsam, veritatis ratione?
+            Maxime?
+            Aliquam, autem aliquid quam molestias pariatur obcaecati modi deserunt incidunt officiis mollitia,
+            distinctio
+            voluptate recusandae sit delectus et cumque architecto ullam itaque commodi? Id doloribus, atque quibusdam
+            ut
+            tenetur illum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium eius suscipit, ratione
+            magnam recusandae hic, amet reiciendis aliquid eaque impedit natus reprehenderit optio ipsa tempore
+            voluptatem,
+            officiis quis facere asperiores.
+            Possimus non odio labore tempora ab eius dignissimos corrupti harum similique, rerum impedit accusamus quia
+            vel
+            quas quam voluptatibus, odit nihil quidem. Consequatur dolorem distinctio dicta molestiae accusamus nisi
+            facilis!
+            Vel sunt, voluptates hic commodi ipsum debitis dolores error atque unde expedita quibusdam iure neque
+            impedit
+            cum inventore ex cumque odio corrupti sapiente porro doloremque iusto illum alias? Soluta, tempora?</p>
+        <h4>Benefits of raw feeding</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos vitae eveniet eum? Sit laboriosam qui aut
+            nesciunt
+            vero sequi quod labore molestias? Qui repellendus voluptas similique exercitationem praesentium dolorem
+            consectetur?
+            Repellat, numquam ratione nostrum tempore soluta atque voluptatem eos debitis excepturi sed omnis laborum
+            deleniti recusandae blanditiis architecto nisi, perspiciatis ab nemo quo. Placeat distinctio excepturi quis
+            exercitationem, maxime nostrum!
+            Debitis repudiandae voluptatum aliquid hic dolorum quas explicabo fugit. Aut neque exercitationem voluptas
+            eos
+            recusandae expedita rem, non provident nesciunt mollitia eius velit placeat debitis quia iste perferendis
+            labore
+            vel.</p>
+        </main>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
 </body>
 
 </html>

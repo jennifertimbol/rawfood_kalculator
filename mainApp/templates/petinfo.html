@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <title>Kalculator</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #e3f2fd;">
+        <a class="navbar-brand" href="#">NavBar</a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="#navbar">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="/">Home</a>
+                <a class="nav-item nav-link" href="/profile">Profile</a>
+                <a class="nav-item nav-link" href="">Helpful Links</a>
+                <a class="nav-item nav-link" href="">Forum</a>
+                <a class="nav-item nav-link" href="/logout">Logout</a>
+            </div>
+        </div>
+    </nav>
+    <h1>Welcome to your raw food kalculator, {{user.username}}!</h1>
+    <form action="/rawfoodkalculator/addpetinfo" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h3>Your bestfriends information</h3>
+        {{petForm.as_p}}
+        <input type="submit" value="Add pet info">
+    </form>
+
+    <!-- <form action="/addpet" method="POST">
+        <h3>Your bestfriends information</h3>
+        {% csrf_token %}
+            <label for="name">Name:</label>
+            <input type="text" name="name">
+            <br>
+            <label for="breed">Breed:</label>
+            <input type="text" name="breed">
+            <br>
+            <label for="birthdate">Birthdate:</label>
+            <input type="date" name="birthdate" id="birthdate">
+            <br>
+            <label for="age">Age:</label>
+            <input type="number" name="age" id="age">
+            <br>
+            <label for="fav_food">Current favorite food:</label>
+            <input type="text" name="fav_food">
+            <br>
+            <h3>Your calculator</h3>
+            <label for="curr_weight">Current weight:</label>
+            <input type="number" name="curr_weight" id="curr_weight">
+            <br>
+            <label for="goal_weight">Goal weight:</label>
+            <input type="number" name="goal_weight" id="goal_weight">
+            <br>
+            <label for="percentage">How much would you like to feed your animal?</label>
+            input:
+            <label for="daily_feeding">How many times a day does your pet eat:</label>
+            <input type="number" name="daily_feeding" id="daily_feeding">
+            <br>
+            <input type="submit" value="Calculate">
+    </form> -->
+
+    <div>
+        <h3>Percentages suggestion for dogs</h3>
+        <ul>
+            <li>1.5% - My dog could lose a few pounds</li>
+            <li>2% - My dog is an ideal weight</li>
+            <li>3% - My dog is an ideal weight but is active/have high energy</li>
+            <li>3% - My dog could gain a few pounds</li>
+            <li>5% - I have a puppy less than 1 year old</li>
+        </ul>
+    </div>
+    </div>
+</body>
+
+</html>
