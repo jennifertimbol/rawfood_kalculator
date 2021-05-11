@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <title>Kalculator</title>
 </head>
 
@@ -28,9 +30,19 @@
         <form action="rawfoodkalculator/results" method="post">
             {% csrf_token %}
             <h3>Calculate</h3>
-            {{kalculatorForm.as_p}}
+            {{calculatorForm.as_p}}
             <input type="submit" value="Calculate">
         </form>
+    </div>
+    <div>
+        <h3>Percentages suggestion for dogs</h3>
+        <ul>
+            <li>1.5% - My dog could lose a few pounds</li>
+            <li>2% - My dog is an ideal weight</li>
+            <li>3% - My dog is an ideal weight but is active/have high energy</li>
+            <li>3% - My dog could gain a few pounds</li>
+            <li>5% - I have a puppy less than 1 year old</li>
+        </ul>
     </div>
 </body>
 

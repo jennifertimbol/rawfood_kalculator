@@ -35,6 +35,10 @@ class User(models.Model):
     updated_at = models.DateField(auto_now=True)
     objects = UserManager()
 
+    def __str__(self):
+        return str(self.username)
+    #pet
+
 PERCENTAGE_CHOICES = (
     ('.015', '1.5%'),
     ('.02', '2%'),
@@ -52,7 +56,7 @@ class Pet(models.Model):
     goal_weight = models.IntegerField()
     percentage = models.CharField(max_length=5, choices=PERCENTAGE_CHOICES, default="1.5%")
     daily_feeding = models.IntegerField()
-    owner = models.ForeignKey(User, related_name="owner", on_delete=models.CASCADE)
+    owner = models.ForeignKey(User, related_name="pet", on_delete=models.CASCADE)
     created_at = models.DateField(auto_now_add=True)
     updated_at = models.DateField(auto_now=True)
 # Create your models here.

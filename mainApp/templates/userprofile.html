@@ -26,12 +26,14 @@
         </div>
     </nav>
     <main>
-        <h1>Hello, {{user.username}}!</h1>
+        <h1>Hello, {{current_user.username}}!</h1>
         <h2>Your pet(s):</h2>
         <div>
-            <h6>{{petForm.name}}</h6>
-            <h6>{{petForm.age}}</h6>
-            <h6>{{petForm.birthdate}}</h6>
+            {% for pets in allPets %}
+            <h6>{{pets.name}}</h6>
+            <h6>{{pets.age}}</h6>
+            <h6>{{pets.birthdate}}</h6>
+            {% endfor %}
         </div>
 
     </main>
@@ -42,6 +44,7 @@
         <h3>80% meat - 10% bones - 5% liver - 5% other secreting organs</h3>
         <p>The 80-10-5-5 is simply a general guideline for owners who are beginners at raw feeding.</p>
         <p>Overtime, you will learn how to modify this based on your own pet. Every animal is different-- some (most big dogs) will require more bones.</p>
+        <img src="https://www.topdograwfoods.com/wp-content/uploads/2018/11/RawFeedingByBoo.jpg" alt="Raw feeding chart designed by Boo">
     </div>
     <div>
         <h2>Conversion Chart</h2>
@@ -51,8 +54,23 @@
                     <th>lbs</th>
                     <th>oz</th>
                     <th>cups</th>
+                    <th>tbsp</th>
                 </tr>
             </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>16</td>
+                    <td>2</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>32</td>
+                    <td>4</td>
+                    <td>60</td>
+                </tr>
+            </tbody>
         </table>
     </div>
     </div>

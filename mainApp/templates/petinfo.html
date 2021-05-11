@@ -19,7 +19,7 @@
         <div class="collapse navbar-collapse" id="#navbar">
             <div class="navbar-nav">
                 <a class="nav-item nav-link" href="/">Home</a>
-                <a class="nav-item nav-link" href="/profile">Profile</a>
+                <a class="nav-item nav-link active" href="/profile">Profile</a>
                 <a class="nav-item nav-link" href="">Helpful Links</a>
                 <a class="nav-item nav-link" href="">Forum</a>
                 <a class="nav-item nav-link" href="/logout">Logout</a>
@@ -31,44 +31,11 @@
         {% csrf_token %}
         <h3>Your bestfriends information</h3>
         {{petForm.as_p}}
-        <input type="submit" value="Add pet info">
+        <input type="submit" value="Calculate">
     </form>
 
-    <!-- <form action="/addpet" method="POST">
-        <h3>Your bestfriends information</h3>
-        {% csrf_token %}
-            <label for="name">Name:</label>
-            <input type="text" name="name">
-            <br>
-            <label for="breed">Breed:</label>
-            <input type="text" name="breed">
-            <br>
-            <label for="birthdate">Birthdate:</label>
-            <input type="date" name="birthdate" id="birthdate">
-            <br>
-            <label for="age">Age:</label>
-            <input type="number" name="age" id="age">
-            <br>
-            <label for="fav_food">Current favorite food:</label>
-            <input type="text" name="fav_food">
-            <br>
-            <h3>Your calculator</h3>
-            <label for="curr_weight">Current weight:</label>
-            <input type="number" name="curr_weight" id="curr_weight">
-            <br>
-            <label for="goal_weight">Goal weight:</label>
-            <input type="number" name="goal_weight" id="goal_weight">
-            <br>
-            <label for="percentage">How much would you like to feed your animal?</label>
-            input:
-            <label for="daily_feeding">How many times a day does your pet eat:</label>
-            <input type="number" name="daily_feeding" id="daily_feeding">
-            <br>
-            <input type="submit" value="Calculate">
-    </form> -->
-
     <div>
-        <h3>Percentages suggestion for dogs</h3>
+        <h3>Percentage suggestion for dogs</h3>
         <ul>
             <li>1.5% - My dog could lose a few pounds</li>
             <li>2% - My dog is an ideal weight</li>

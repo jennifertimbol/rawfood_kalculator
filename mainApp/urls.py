@@ -12,7 +12,7 @@ urlpatterns = [
     path('profile', views.userprofile),
     path('rawfoodkalculator/petinfo', views.petinfo),
     path('rawfoodkalculator/addpetinfo', views.addpetinfo),
-    path('rawfoodkalculator/addpet', views.addpet),
+    # path('rawfoodkalculator/addpet', views.addpet),
     path('rawfoodkalculator/results', views.results),
     path('logout', views.logout),
 ]

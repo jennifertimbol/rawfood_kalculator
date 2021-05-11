@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import User, Pet
-from .forms import petForm, kalculatorForm
+from .forms import petForm
 from django.contrib import messages
 import bcrypt
 
@@ -47,54 +47,55 @@ def signin(request):
 def userprofile(request):
     if "logged_user" not in request.session:
         return redirect('/')
-
+    user = User.objects.get(id=request.session['logged_user'])
+    allPets = Pet.objects.filter(owner_id=user.id)
     context = {
-        'user' : User.objects.get(id=request.session['logged_user']),
-        'petForm':petForm,
-        
+        'current_user' : User.objects.get(id=request.session['logged_user']),
+        'allPets':allPets,       
     }
-
     return render(request, "userprofile.html", context)
 
 def petinfo(request):
     context = {
         'user' : User.objects.get(id=request.session['logged_user']),
-        'petForm':petForm,
+        'petForm':petForm(),
     }
     return render(request, 'petinfo.html', context)
 
 def addpetinfo(request):
     if request.method == "POST":
+        owner = User.objects.get(id=request.session['logged_user'])
+        print(owner)
         postedPetForm = petForm(request.POST, request.FILES)
+        print(request.POST)
         if postedPetForm.is_valid():
-            postedPetForm.save()
-            return redirect('/addpet')
-        else:
-            context = {
-                'user' : User.objects.get(id=request.session['logged_user']),
-                'petForm':postedPetForm,
-            }
-            return render(request, "petinfo.html", context)
+            print('Its valid!')
+            form = postedPetForm.save(commit=False)
+            print(owner.id)
+            form.owner_id = owner.id
+            form.save()
+            return redirect('/rawfoodkalculator/results')
+    else:
+        context = {
+            'user' : User.objects.get(id=request.session['logged_user']),
+            'petForm':postedPetForm,
+        }
+        return render(request, "petinfo.html", context)
     return redirect('/profile')
 
-def addpet(request):
-    if request.method== "POST":
-        postedKalculatorForm = kalculatorForm(request.POST)
-        if postedKalculatorForm.is_valid():
-            goal_weight = request.GET['goal_weight']
-            percentage = request.GET['percentage']
-            results = goal_weight*percentage
-            return redirect('/results')
-
-    context = {
-        'user' : User.objects.get(id=request.session['logged_user']),
-        'kalculatorForm' : kalculatorForm,
-    }
-    return render(request, "calculate.html", context)
+# def addpet(request):
+#     context = {
+#         'user' : User.objects.get(id=request.session['logged_user']),
+#         'calculatorForm':calculatorForm,
+#     }
+#     return render(request, "calculate.html", context)
 
 def results(request):
-    context = {
-        'user' : User.objects.get(id=request.session['logged_user']),
+    user = User.objects.get(id=request.session['logged_user'])
+    allPets = Pet.objects.filter(owner_id=user.id)
+    context= {
+        'user':user,
+        'allPets':allPets
     }
     return render(request, "results.html", context)
 

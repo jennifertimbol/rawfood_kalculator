@@ -4,22 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+   <link rel="stylesheet" href="{% static 'css/home.css' %}">
     <title>Rawfood Kalculator</title>
 </head>
 
 <body>
     <div class="container-fluid">
         {% if request.session.logged_user %}
-        <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #e3f2fd;">
+        <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #ffff;">
             <a class="navbar-brand" href="#">NavBar</a>
             <button class="navbar-toggler" data-toggle="collapse" data-target="#navbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="#navbar">
-                <div class="navbar-nav">
-                    <a class="nav-item nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-item nav-link active" href="/">Home</a>
                     <a class="nav-item nav-link" href="/profile">Profile</a>
                     <a class="nav-item nav-link" href="">Helpful Links</a>
                     <a class="nav-item nav-link" href="">Forum</a>
@@ -28,7 +30,7 @@
             </div>
         </nav>
         {% else %}
-        <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #e3f2fd;">
+        <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #ffff;">
             <a class="navbar-brand" href="#">NavBar</a>
             <button class="navbar-toggler" data-toggle="collapse" data-target="#navbar">
                 <span class="navbar-toggler-icon"></span>

@@ -1,23 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Results</title>
 </head>
+
 <body>
-    <h1>Welcome to your raw food kalculator, {{user.username}}!</h1>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/profile">Profile</a>
-        <a href="">Helpful Links</a>
-        <a href="">Forum</a>
-        <a href="/logout">Logout</a>
-    </nav>
-    <div>
-        <h3>Results</h3>
-        <h6>{{pet.name} should be eating:</h6>
-        <p></p>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #e3f2fd;">
+            <a class="navbar-brand" href="#">NavBar</a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="#navbar">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" href="/">Home</a>
+                    <a class="nav-item nav-link" href="/profile">Profile</a>
+                    <a class="nav-item nav-link" href="">Helpful Links</a>
+                    <a class="nav-item nav-link" href="">Forum</a>
+                    <a class="nav-item nav-link" href="/logout">Logout</a>
+                </div>
+            </div>
+        </nav>
+        <div>
+            <h1>Welcome to your raw food kalculator, {{user.username}}!</h1>
+            <h3>Results</h3>
+            {% for pet in allPets %}
+            <h6>{{pet.name}} should be eating:</h6>
+            {% endfor %}
+        </div>
     </div>
 </body>
+
 </html>
