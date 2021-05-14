@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import User, Pet
-from .forms import petForm
+from .forms import petForm, secondPetForm
 from django.contrib import messages
 import bcrypt
 
@@ -8,10 +8,10 @@ def index(request):
     return render(request, "home.html")
 
 def register(request):
-    return render(request, "register.html")
+    return render(request, "register2.html")
 
 def login(request):
-    return render(request, "login.html")
+    return render(request, "login2.html")
 
 def createaccount(request):
         if request.method == 'POST':
@@ -73,8 +73,9 @@ def addpetinfo(request):
             form = postedPetForm.save(commit=False)
             print(owner.id)
             form.owner_id = owner.id
+            print(form.id)
             form.save()
-            return redirect('/rawfoodkalculator/results')
+            return redirect(f'/rawfoodkalculator/results/{form.id}')
     else:
         context = {
             'user' : User.objects.get(id=request.session['logged_user']),
@@ -90,14 +91,68 @@ def addpetinfo(request):
 #     }
 #     return render(request, "calculate.html", context)
 
-def results(request):
+def results(request, pet_id):
+
     user = User.objects.get(id=request.session['logged_user'])
-    allPets = Pet.objects.filter(owner_id=user.id)
+    curr_pet = Pet.objects.get(id=pet_id)
+
+    pet_weight = curr_pet.goal_weight
+    percent = curr_pet.percentage
+    total = float(pet_weight) * float(percent)
+
+    meat = total * .8
+    bone = total * .1
+    liver = total * .05
+    other = total * .05
+
     context= {
         'user':user,
-        'allPets':allPets
+        'pet':curr_pet,
+        'total':round(total, 10),
+        'meat': round(meat, 10),
+        'bone': round(bone, 10),
+        'liver': round(liver, 10),
+        'other': round(other, 10),
     }
     return render(request, "results.html", context)
+
+def deletepet(request, pet_id):
+    if 'logged_user' not in request.session:
+        return redirect('/')
+    
+    delete_pet = Pet.objects.get(id=pet_id)
+    delete_pet.delete()
+    return redirect('/profile')
+
+def updatepet(request, pet_id):
+    if "logged_user" not in request.session:
+        return redirect('/')
+    user = User.objects.get(id=request.session['logged_user'])
+    curr_pet = Pet.objects.get(id=pet_id)
+
+    context = {
+        'user':user,
+        'pet':curr_pet,
+        'secondPetForm':secondPetForm()
+    } 
+    return render(request, 'updatepet.html', context)
+
+def update(request, pet_id):
+    if request.method == 'POST':
+        owner = User.objects.get(id=request.session['logged_user'])
+        current_pet = Pet.objects.get(id=pet_id)
+        postedSecondForm = secondPetForm(request.POST, instance=current_pet)
+        if postedSecondForm.is_valid():
+            form = postedSecondForm.save()
+    else:
+        context = {
+        'user':owner,
+        'pet':current_pet,
+        'secondPetForm':secondPetForm()
+    } 
+        return render(request, 'updatepet.html', context)
+        
+    return redirect(f'/rawfoodkalculator/results/{current_pet.id}')
 
 def logout(request):
     request.session.flush()

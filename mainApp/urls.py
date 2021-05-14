@@ -11,9 +11,11 @@ urlpatterns = [
     path('signin', views.signin),
     path('profile', views.userprofile),
     path('rawfoodkalculator/petinfo', views.petinfo),
-    path('rawfoodkalculator/addpetinfo', views.addpetinfo),
-    # path('rawfoodkalculator/addpet', views.addpet),
-    path('rawfoodkalculator/results', views.results),
+    path('addnewpet', views.addpetinfo),
+    path('rawfoodkalculator/results/<int:pet_id>', views.results),
+    path('rawfoodkalculator/<int:pet_id>/delete', views.deletepet),
+    path('rawfoodkalculator/<int:pet_id>/updatepet', views.updatepet),
+    path('update/<int:pet_id>', views.update),
     path('logout', views.logout),
 ]
 

@@ -1,6 +1,7 @@
 from django.db import models
 import re
 import bcrypt
+from PIL import Image
 
 email_regex = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 
@@ -40,10 +41,11 @@ class User(models.Model):
     #pet
 
 PERCENTAGE_CHOICES = (
-    ('.015', '1.5%'),
-    ('.02', '2%'),
-    ('.03', '3%'),
-    ('.05', '5%'),
+    ('.015', '1.5'),
+    ('.02', '2'),
+    ('.025', '2.5'),
+    ('.03', '3'),
+    ('.05', '5'),
 )
 class Pet(models.Model):
     name = models.CharField(max_length=55)
@@ -52,6 +54,7 @@ class Pet(models.Model):
     age = models.IntegerField()
     fav_food = models.TextField()
     profile_photo = models.ImageField(null=True, blank=True)
+    
     curr_weight = models.IntegerField()
     goal_weight = models.IntegerField()
     percentage = models.CharField(max_length=5, choices=PERCENTAGE_CHOICES, default="1.5%")
