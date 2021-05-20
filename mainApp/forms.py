@@ -21,11 +21,12 @@ class petForm(forms.ModelForm):
 class secondPetForm(forms.ModelForm):
     class Meta:
         model = Pet
-        fields = ['curr_weight', 'goal_weight', 'percentage', 'daily_feeding']
+        fields = ['curr_weight', 'goal_weight', 'percentage', 'daily_feeding', 'fav_food']
         labels = {
             'curr_weight' : "Current weight (lbs):",
             'goal_weight' : "Goal weight (lbs):",
-            'daily_feeding' : "How many times a day do you feed your pet?"
+            'daily_feeding' : "How many times a day do you feed your pet?",
+            'fav_food' : "Favorite food:"
         }
 
 

@@ -13,44 +13,26 @@ body {
     color: #235182 !important;
     font-family: 'Noto Serif KR', serif !important;
 }
+
 #goback {
-    margin-left: 80px;
+    margin-left: 60px;
     text-decoration: underline;
     color: #235182;;
-}
-.addpet {
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
-}
-
-h4 {
-    font-family: 'Montserrat', sans-serif;
-    text-align: center;
 }
 
 .form {
     display: inline-block;
     width: 45%;
-    margin: 20px 20px 20px 140px;
+    margin: 20px 20px 20px 60px;
     padding: 40px;
     background-color: #F6F6F6;
-}
-
-.form h5 {
-    text-align: center;
-}
-
-
-.percentage_suggestion {
-    margin-left: 20px;
-    margin-bottom: 100px;
 }
 
 .chart {
     display: inline-block;
     width: 35%;
-    margin-left: 60px;
-    margin-top: 50px;
+    margin-left: 65px;
+    margin-top: 40px;
     padding: 30px 0px;
     vertical-align: top;
 }
@@ -60,8 +42,14 @@ h6 {
     color: #5A6B7B;
 }
 
-li {
-    font-family: 'Lato', sans-serif;
+.update {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+h4 {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
 }
 
 footer {

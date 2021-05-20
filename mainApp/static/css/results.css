@@ -1,3 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+
 body {
     width: 1400 px;
 }
+
+#navbar {
+    padding: 10px !important;
+}
+
+.navbar a {
+    margin-left: 60px;
+    color: #235182 !important;
+    font-family: 'Noto Serif KR', serif !important;
+}
+
+h1 {
+    margin-top: 20px;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+.mainpetinfo {
+    background-color:#ebebeb;
+    width: 60%;
+    height: 260px;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    box-shadow: 5px 2px 2px 2px grey;
+}
+
+.mainpetinfo p {
+    line-height: 0.5;
+    font-family: 'Newsreader', serif;
+    /* line-height: .9; */
+}
+
+#goback {
+    margin-left: 80px;
+    text-decoration: underline;
+    color: #235182;;
+}
+
+main {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#mainpetinfo {
+    margin-top: 30px;
+}
+
+.bottomcontent {
+    margin-top: 50px;
+}
+
+.petchart {
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 110px;
+}
+
+.thead {
+    background-color: #BFBFBF;
+}
+
+.thead th, .tbody td {
+    font-family: 'Newsreader', serif;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.conv_chart {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 10%;
+}
+
+img {
+    margin: 15px 30px 10px 20px;
+    float: left;
+    border: 1px solid #ddd; /* Gray border */
+    border-radius: 4px;  /* Rounded border */
+    padding: 5px;
+}
+
+.conv_chart h2 {
+    display: inline-block;
+    text-align: center;
+}
+
+.petchart h5 {
+    font-family: 'Fjalla One', sans-serif;
+}
+
+th, td {
+    font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+.petchart p {
+    line-height: .8;
+    font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+button {
+    border-radius: 6px;
+    width: 150px;
+}
+
+button:hover {
+    transform: translateY(-0.1em);
+    background-color: #fff9b3;
+}
+
+button a {
+    color: black;
+    font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+button a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+footer {
+    width: 100%;
+    height: 150;
+    background-color: #eddcd2;
+}
+
+.footer {
+    display: inline-block;
+    margin-left: 240px;
+}
+footer h6 {
+    display: inline-block;
+    padding: 20px;
+    text-align: center;
+    padding-left: 30px;
+    text-decoration: underline;
+    font-family: 'Newsreader', serif;
+}
+

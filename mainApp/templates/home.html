@@ -16,7 +16,7 @@
 <body>
     <div class="container-fluid">
         {% if request.session.logged_user %}
-        <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #83BE42;">
+        <nav id="navbar" class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #ffff;">
             <!-- <div class="navbar-header">
                 <a class="navbar-brand" href="#">RFC</a>
             </div> -->
@@ -33,6 +33,7 @@
                 </div>
             </div>
         </nav>
+        <hr>
         {% else %}
         <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #ffff;">
             <!-- <div class="navbar-header">
@@ -49,10 +50,12 @@
                 </div>
             </div>
         </nav>
+        <hr>
         {% endif %}
         <main>
             <h2>Your Rawfood Kalculator</h2>
             <section class="home">
+                <h3>Feed right. Treat right.</h3>
             </section>
             {% load staticfiles %}
             <div class="container">
@@ -82,7 +85,22 @@
                         ullam optio ut quasi dolor nihil? Sunt, corrupti.</p>
                 </div>
             </div>
+            <div class="bottomcontent">
+                <img src="https://cdn.shopify.com/s/files/1/1602/8835/files/Benefits-of-a-raw-food-diet-for-dogs_1_large.jpg?v=1482790884" alt="Benefits of Raw">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque, ratione corporis debitis at esse ad error, molestiae ut maxime itaque dolores possimus dolor deserunt? Quia velit odit voluptatibus voluptate amet. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat atque ad excepturi qui praesentium, autem laborum velit deleniti quisquam animi quibusdam necessitatibus asperiores nam natus aspernatur pariatur in, rerum eum?
+                    Beatae eveniet unde et distinctio repellendus! Sed earum ad eligendi consectetur, dolores ab reprehenderit doloribus amet cupiditate consequatur. Sint quae incidunt distinctio veritatis libero voluptas dolorem mollitia culpa debitis. Et!
+                    Commodi assumenda accusantium excepturi ullam ratione, voluptate illo dignissimos. Consequuntur atque ipsam eaque, nulla ullam, veniam facere ab distinctio consequatur provident numquam officiis excepturi, deleniti accusamus mollitia eligendi corrupti nostrum!</p>
+            </div>
         </main>
+        <footer>
+            <div class="footer">
+            <h6>Terms of Use</h6>
+            <h6>Privacy and Cookies Statement</h6>
+            <h6>Cookie Consent</h6>
+            <h6>How the site works</h6>
+            <h6>Contact</h6>
+            </div>
+        </footer>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

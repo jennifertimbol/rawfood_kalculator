@@ -1,11 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces&family=Suranna&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Taviraj:wght@300&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
 body {
     width: 1400 px;
 }
 
+#navbar {
+    padding: 10px !important;
+}
+
+.navbar a {
+    margin-left: 60px;
+    color: #235182 !important;
+    font-family: 'Noto Serif KR', serif !important;
+}
+
+/* main {
+    background-image: url(https://images.unsplash.com/photo-1495195129352-aeb325a55b65?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2855&q=80);
+} */
 
 
-img {
-    display: block;
-    max-width: 100%;
-    height: auto;
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    color: #235182;
+    /* margin-top: 20px; */
+}
+
+h3 {
+    font-family: 'Roboto', sans-serif;
+    display: inline-block;
+
+}
+
+.table {
+    padding: 20px;
+    background-color: #f8f9fa;
+    width: 50%;
+    margin-top: 20px;
+    margin-left: 30px;
+    /* margin-right: auto; */
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 5px 2px 2px 2px grey;
+    display: inline-block;
+    border-left: 1px solid grey;
+}
+
+.table h4 {
+    font-family: 'Fraunces', serif;
+    color: #235182;
+}
+.table p {
+    line-height: 0.5;
+    font-family: 'Lato', sans-serif; 
+}
+
+.scroll {
+    height: 450px;
+    overflow: scroll;
+}
+
+.feeding_suggestion {
+    padding: 20px;
+    margin-left: 50px;
+    width: 600px;
+    vertical-align: top;
+    display: inline-block;
+}
+
+.image {
+    display: inline-block;
+    margin-left: 150px;
+    vertical-align: top;
+
+}
+
+.feeding_suggestion h2 {
+    text-align: center;
+    color: black;
+}
+
+.feeding_suggestion h4 {
+    text-align: center;
+    font-family: 'Rosarivo', serif;
+    text-decoration: underline;
+}
+
+.feeding_suggestion p {
+    text-align: center;
+}
+
+button {
+    border-radius: 6px;
+    width: 150px;
+    background-color: whitesmoke
+}
+
+button:hover {
+    background-color: #fff9b3;
+    box-shadow: white;
+    transform: translateY(-0.1em);
+}
+
+a {
+    color: black;
+    font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+p {
+    font-family: 'Playfair Display', serif;
+}
+
+.addpetbutton {
+    background-color: white;
+    border: solid 2px grey;
+    border-radius: 10px;
+    width: 500px;
+    height: 35px;
+}
+
+.addpet a {
+    color: black;
+    padding: 5px 20px;
+}
+
+.addpetbutton:hover {
+    background-color: #FFFF00;
+    box-shadow: white;
+    transform: translateY(-0.25em);
+}
+
+footer {
+    margin-top: 30px;
+    width: 100%;
+    height: 150;
+    background-color: #eddcd2;
+}
+
+.footer {
+    display: inline-block;
+    margin-left: 240px;
+}
+footer h6 {
+    display: inline-block;
+    padding: 20px;
+    text-align: center;
+    padding-left: 30px;
+    text-decoration: underline;
+    font-family: 'Newsreader', serif;
 }

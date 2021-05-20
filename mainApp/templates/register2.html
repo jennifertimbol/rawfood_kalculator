@@ -18,7 +18,7 @@
 <body>
     <div class="container-fluid">
         {% if request.session.logged_user %}
-        <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #ffff;">
+        <nav id="navbar" class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #ffff;">
             <!-- <div class="navbar-header">
                 <a class="navbar-brand" href="#">RFC</a>
             </div> -->
@@ -57,7 +57,7 @@
             <section class="home">
                 <div class="register">
                     <div class="form-group col-xs-3">
-                        <h2>Create an Account</h2>
+                        <h5>Create an Account</h5>
                         {% if messages %}
                         <ul>
                             {% for message in messages %}
@@ -83,11 +83,12 @@
                                 <label for="confirm" class="form-label">Confirm PW</label>
                                 <input type="password" name="confirm_password" class="form-control">
                             </div>
-                            <br>
-                            <input type="submit" class="btn btn-primary" value="Register">
+                            <input type="submit" id="button" class="btn btn-primary" value="Register">
                         </form>
+                        <div class="extralink">
                         <p>Already have an account?</p>
                         <a href="/login">Sign in</a>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -120,6 +121,15 @@
                 </div>
             </div>
         </main>
+        <footer>
+            <div class="footer">
+            <h6>Terms of Use</h6>
+            <h6>Privacy and Cookies Statement</h6>
+            <h6>Cookie Consent</h6>
+            <h6>How the site works</h6>
+            <h6>Contact</h6>
+            </div>
+        </footer>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

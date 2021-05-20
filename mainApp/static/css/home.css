@@ -1,11 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Playfair+Display+SC&family=Squada+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Newsreader&display=swap');
 
 body {
     width: 1400 px;
 }
 
 h2 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Noto Serif KR', serif !important;
+    font-size: 50px;
+    color: #235182;
     /* text-align: bottom;
     padding: 10px 0px 0px 30px;
     height: 280px;
@@ -15,9 +21,19 @@ h2 {
     background-size: cover; */
 }
 
+#navbar {
+    padding: 10px !important;
+}
+
+.navbar a {
+    margin-left: 60px;
+    color: #235182 !important;
+    font-family: 'Noto Serif KR', serif !important;
+}
+
 .home {
     width: 100%;
-    height: 450px;
+    height: 400px;
     background-image: url(https://images.unsplash.com/photo-1597633611385-17238892d086?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80);
     background-position: bottom;
     background-size:cover;
@@ -30,9 +46,22 @@ h2 {
     justify-content: space-between;
 }
 
-.what, .why, .benefits {
+.what, .why, .benefits, .bottomcontent{
     padding: 15px;
     text-align: center;
+}
+
+.bottomcontent p {
+    margin-top: 20px;
+}
+
+h3 {
+    height: 350px;
+    width: 100%;
+    padding-left: 900px;
+    padding-top: 100px;
+    margin: 40px;
+    font-family: 'Playfair Display SC', serif;
 }
 
 h4 {
@@ -41,4 +70,24 @@ h4 {
 
 p {
     font-family: 'Lato', sans-serif;    
+}
+
+footer {
+    margin-top: 30px;
+    width: 100%;
+    height: 150;
+    background-color: #eddcd2;
+}
+
+.footer {
+    display: inline-block;
+    margin-left: 240px;
+}
+footer h6 {
+    display: inline-block;
+    padding: 20px;
+    text-align: center;
+    padding-left: 30px;
+    text-decoration: underline;
+    font-family: 'Newsreader', serif;
 }

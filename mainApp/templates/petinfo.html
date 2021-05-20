@@ -38,10 +38,11 @@
         </nav>
         </div>
         <hr>
-        <h3>HELLO</h3>
-        <h4>Welcome to your raw food kalculator, {{user.username}}!</h4>
+        <a id="goback" href="/profile">Go back to your profile</a>
+        <h3 class="addpet">ADD A PET</h3>
+        <h4>Welcome to your raw food kalculator, {{user.username}}! </h4>
         <div class="chart">
-            <div>
+            <div class="percentage_suggestion">
                 <h6>Percentage suggestion for dogs</h6>
                 <ul>
                     <li>1.5% - My dog could lose a few pounds</li>
@@ -50,8 +51,6 @@
                     <li>3% - My dog could gain a few pounds</li>
                     <li>5% - I have a puppy less than 1 year old</li>
                 </ul>
-            </div>
-            <div>
                 <h6>Percentage suggestion for cats</h6>
                 <ul>
                     <li>2% - My cat could lose a few pounds</li>
@@ -60,6 +59,9 @@
                     <li>5% - I have a kitten less than 1 year old</li>
                 </ul>
             </div>
+            <h3>What shape is your pet?</h3>
+            <h6>Body Condition Scoring Chart</h6>
+            <img src="http://bowwowfuntowne.com/wp-content/uploads/2015/08/DogWeightChart.png" alt="Pet shape chart">
         </div>
         {% load crispy_forms_tags %}
         <div class="form">
@@ -71,6 +73,15 @@
             </form>
         </div>
     </div>
+    <footer>
+        <div class="footer">
+        <h6>Terms of Use</h6>
+        <h6>Privacy and Cookies Statement</h6>
+        <h6>Cookie Consent</h6>
+        <h6>How the site works</h6>
+        <h6>Contact</h6>
+        </div>
+    </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>

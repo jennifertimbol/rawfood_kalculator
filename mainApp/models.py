@@ -54,7 +54,31 @@ class Pet(models.Model):
     age = models.IntegerField()
     fav_food = models.TextField()
     profile_photo = models.ImageField(null=True, blank=True)
-    
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        img = Image.open(self.profile_photo.path)
+        if img.height < img.width:
+            # make square by cutting off equal amounts left and right
+            left = (img.width - img.height) / 2
+            right = (img.width + img.height) / 2
+            top = 0
+            bottom = img.height
+            img = img.crop((left, top, right, bottom))
+
+        elif img.width < img.height:
+            # make square by cutting off bottom
+            left = (img.width - img.height) / 2
+            right = (img.width + img.height) / 2
+            top = 0
+            bottom = img.height
+            img = img.crop((left, top, right, bottom))
+
+        if img.height > 200 or img.weight > 200:
+            output_size = (200,200)
+            img.thumbnail(output_size)
+
+        img.save(self.profile_photo.path)
+            
     curr_weight = models.IntegerField()
     goal_weight = models.IntegerField()
     percentage = models.CharField(max_length=5, choices=PERCENTAGE_CHOICES, default="1.5%")
@@ -62,4 +86,14 @@ class Pet(models.Model):
     owner = models.ForeignKey(User, related_name="pet", on_delete=models.CASCADE)
     created_at = models.DateField(auto_now_add=True)
     updated_at = models.DateField(auto_now=True)
-# Create your models here.
+
+
+#     def save(self, *args, **kwargs):
+#         super().save(*args, **kwargs)
+#         img = Image.open(self.profile_photo.path)
+
+#         if img.height > 300 or img.weight > 300:
+#             output_size = (300,300)
+#             img.thumbnail(output_size)
+#             img.save(self.profile_photo.path)
+# # Create your models here.
